@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="recursos/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+    <title>To Do</title>
+</head>
+
+<body onload="requisitarTarefas()">
+    <main>
+        <h1>To-Do list</h1>
+        <p>Faça seu planejamento diário conosco &#x1F609</p>
+        <div id="caixaCampo">
+            <button onclick="mostrar()" id="mostrar">+</button> 
+            <input type="text" name="" id="nomeTarefa">
+            <button onclick="ocultar()" id="ocult">X</button><br>
+            <button onclick="adicionar(1, '#84e28087')" value="1" id="bttN1">De boas</button> <br>
+            <button onclick="adicionar(2, '#fca97987')" value="2" id="bttN2">Urgente</button> <br>
+            <button onclick="adicionar(3, '#fd5b5b87')" value="3" id="bttN3">Muito urgente</button> 
+        </div>
+
+
+        <div>
+            <h2>Tarefas</h2>
+
+            <ul id="listaToDo">
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
+
+<!--Obrigado pela preferência ;). Ass:Gabriel-->

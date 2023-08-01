@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@keyframes trans-caixa{
+    0%{
+        width:25%;
+        height:80px;
+    }
+
+    50%{
+        width:12.5%;
+        color:transparent;
+    }
+
+    100%{
+        width:3%;
+        height:30px;
+    }
+}
+
+@keyframes trans-caixa-abrir{
+    0%{
+        width:3%;
+        height:30px;
+    }
+
+    50%{
+        width:12.5%;
+        color:transparent;
+
+    }
+
+    100%{
+        width:25%;
+        height:60px;
+    }
+}
+
+@keyframes desaparecer{
+    0%{
+        
+    }
+
+    100%{
+        background-color: transparent;
+        color:transparent;
+        
+    }
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#caixaCampo{
+    background-color:rgba(163, 163, 163, 0.192);
+    display:inline-block;
+    padding:10px;
+    border-radius:5px;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    width:2.5%;
+    height: 30px;
+}
+
+
+#bttN1, #bttN2, #bttN3, #nomeTarefa, #ocult{
+    display:none;
+    padding:5px;
+}
+
+#mostrar{
+    color:#fff;
+    background-color:#008cff;
+    border:1px solid transparent;
+    border-radius:5px;
+    width: 30px;
+    height: 30px;
+    font-size:1.3em;
+    font-weight: bold;
+}
+
+#nomeTarefa{
+    width:200px;
+    margin:0px 5px 9px 0px;
+}
+
+#ocult{
+    border:1px solid transparent;
+    border-radius:5px;
+    width: 30px;
+    height: 30px;
+    padding:0;
+    font-weight: bold;
+    font-size:1em;
+    background-color:#cf0b0b;
+    color:#ffffff;
+}
+
+#bttN1{
+    background-color:#84e280;
+    color:#fff;
+    font-weight:bold;
+    border:1px solid transparent;
+    border-radius:5px;
+    padding:8px
+}
+
+#bttN2{
+    background-color:#fca979;
+    color:#fff;
+    font-weight:bold;
+    border:1px solid transparent;
+    border-radius:5px;
+    padding:8px
+}
+
+#bttN3{
+    background-color:#fd5b5b;
+    color:#fff;
+    font-weight:bold;
+    border:1px solid transparent;
+    border-radius:5px;
+    padding:8px
+}
+
+ul{
+    list-style-type: none;
+    padding:5px;
+    width:32%;
+}
+
+.tarefa{
+    font-size:14pt;
+    padding:5px;
+    border-radius:5px;
+    display: list-item;
+    width:80%;
+    margin-bottom:10px;
+}
+
+.checkbox{
+    appearance:none;
+    width:11pt;
+    height:11pt;
+    line-height: 4px;
+    transform:scale(1.1);
+    border:0.5px solid #a5a5a5;
+    border-radius:2px;
+    padding:5px;
+    margin:0px 5px;
+}
+
+.checkbox:checked{
+    background-color:rgb(19, 212, 29);
+    background-image:url('recursos/checkmark-8.png');
+    background-position: center center;
+    background-size:auto;
+    background-repeat:no-repeat
+}
+
+.pronto{
+    text-decoration: line-through;
+    animation:normal desaparecer 2s linear;
+}
