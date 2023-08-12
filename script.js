@@ -75,6 +75,8 @@ function adicionar(pri, cor){
         
 
         bd.construirTarefa(novaTarefa, cor)
+
+        document.querySelector('#nomeTarefa').value = ''
     }
 }
 
