@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @keyframes trans-caixa{
     0%{
-        width:25%;
+        width:30%;
         height:80px;
     }
 
@@ -29,7 +29,7 @@
     }
 
     100%{
-        width:25%;
+        width:40%;
         height:60px;
     }
 }
@@ -48,6 +48,14 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-flow:row nowrap;
+}
+
+main{
+    min-width:70%;
+    margin:auto;
+    max-width: 90%;
 }
 
 #caixaCampo{
@@ -55,10 +63,9 @@ body{
     display:inline-block;
     padding:10px;
     border-radius:5px;
-    display:flex;
-    flex-flow:row wrap;
     justify-content: space-between;
-    width:2.5%;
+    flex-flow:column nowrap;
+    width: 5%;
     height: 30px;
 }
 
@@ -66,6 +73,8 @@ body{
 #bttN1, #bttN2, #bttN3, #nomeTarefa, #ocult{
     display:none;
     padding:5px;
+    max-width:100%;
+    min-width:5%;
 }
 
 #mostrar{

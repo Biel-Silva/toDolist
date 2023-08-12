@@ -207,7 +207,7 @@ function AnimacaoFechar(){
     caixa.style.animation = 'normal trans-caixa 1s linear'
 
     caixa.addEventListener('animationend', ()=>{
-        caixa.style.width = '2.5%'
+        caixa.style.width = '5%'
         caixa.style.height = '30px'
         caixa.style.transition = ''
 
@@ -232,7 +232,7 @@ function AnimacaoAbrir(){
 
     caixa.addEventListener('animationend', ()=>{
         caixa.style.animation = ''
-        caixa.style.width = '25%'
+        caixa.style.width = '40%'
         caixa.style.height = '80px'
 
     componentes[0].style.display = 'inline-block'
