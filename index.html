@@ -15,15 +15,24 @@
     <main>
         <h1>To-Do list</h1>
         <p>Faça seu planejamento diário conosco &#x1F609</p>
-        <div id="caixaCampo">
+        <div class="caixaCampo" onresize="verificadorResponsivo()">
             <button onclick="mostrar()" id="mostrar">+</button> 
             <input type="text" name="" id="nomeTarefa">
             <button onclick="ocultar()" id="ocult">x</button><br>
 
-            <div id="btts">
-                <button onclick="adicionar(1, '#84e28087')" value="1" id="bttN1">De boas</button> <br>
-                <button onclick="adicionar(2, '#fca97987')" value="2" id="bttN2">Urgente</button> <br>
-                <button onclick="adicionar(3, '#fd5b5b87')" value="3" id="bttN3">Muito urgente</button>
+            <div class="btts" >
+                <button onclick="adicionar(1, '#84e28087')" value="1" class="bttN1">Moderado</button> <br>
+                <button onclick="adicionar(2, '#fca97987')" value="2" class="bttN2">Urgente</button> <br>
+                <button onclick="adicionar(3, '#fd5b5b87')" value="3" class="bttN3">Muito urgente</button>
+            </div>
+        </div>
+
+        <div class="caixaCampoCelular">
+            <input type="text" width="300">
+            <div class="btts" >
+                <button onclick="adicionar(1, '#84e28087')" value="1" class="bttN1">Moderado</button> <br>
+                <button onclick="adicionar(2, '#fca97987')" value="2" class="bttN2">Urgente</button> <br>
+                <button onclick="adicionar(3, '#fd5b5b87')" value="3" class="bttN3">Muito urgente</button>
             </div>
         </div>
 

@@ -51,6 +51,7 @@ body{
     display:flex;
     flex-flow:column;
     align-items: center;
+    justify-content: center;
 }
 
 main{
@@ -60,7 +61,12 @@ main{
 
 }
 
-#caixaCampo{
+.caixaCampoCelular{
+    display: none;
+    min-width: 301px;
+}
+
+.caixaCampo{
     background-color: rgba(163, 163, 163, 0.192);
     display: flex;
     padding: 10px;
@@ -72,8 +78,8 @@ main{
     height: 30px;
 }
 
-#btts{
-    display: flex;
+.btts{
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -81,8 +87,7 @@ main{
 }
 
 
-#bttN1, #bttN2, #bttN3, #nomeTarefa, #ocult{
-    display:none;
+.bttN1, .bttN2, .bttN3, #nomeTarefa, #ocult{
     padding:5px;
     max-width:100%;
     min-width:5%;
@@ -96,7 +101,7 @@ main{
 }
 
 @media (max-width:904px){
-    #bttN1, #bttN2, #bttN3{
+    .bttN1, .bttN2, .bttN3{
         font-size:10px;
         width:25%;
         padding:5px !important;
@@ -118,6 +123,44 @@ main{
         color:#008cff !important;
         
     }
+
+    
+}
+
+@media (max-width:808px){
+    #btts{
+        display: none !important;
+    }
+
+    .tarefa{
+        font-size:16px !important;
+    }
+}
+
+@media (max-width:800px){
+    .caixaCampo{
+        display: none;
+    }
+
+    .caixaCampoCelular{
+        display:flex;
+        padding:30px;
+        background-color: #dbdbdb;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btts{
+        margin:5px;
+        display: flex;
+        width:80%
+    }
+
+    .btts > button{
+        font-size: 8px;
+        width:30%
+    }
 }
 
 #mostrar{
@@ -132,11 +175,13 @@ main{
 }
 
 #nomeTarefa{
+    display: none;
     width:200px;
     margin:0px 5px 9px 0px;
 }
 
 #ocult{
+    display: none;
     border:1px solid transparent;
     border-radius:5px;
     width: 30px;
@@ -149,7 +194,7 @@ main{
     background-color:transparent;
 }
 
-#bttN1{
+.bttN1{
     background-color:#84e280;
     color:#fff;
     font-weight:bold;
@@ -158,7 +203,7 @@ main{
     padding:8px
 }
 
-#bttN2{
+.bttN2{
     background-color:#fca979;
     color:#fff;
     font-weight:bold;
@@ -167,7 +212,7 @@ main{
     padding:8px
 }
 
-#bttN3{
+.bttN3{
     background-color:#fd5b5b;
     color:#fff;
     font-weight:bold;
@@ -201,6 +246,11 @@ ul{
     border-radius:2px;
     padding:5px;
     margin:0px 5px;
+}
+
+.bttPCelular{
+    width:100vw;
+    background-color: #008cff;
 }
 
 .checkbox:checked{

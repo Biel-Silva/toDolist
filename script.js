@@ -22,6 +22,21 @@ function Checked(element){
     
 }
 
+function verificadorResponsivo(e){
+    
+    console.log(e)
+}
+
+if(window.innerWidth <= 660){
+    let lis = document.querySelectorAll('li')
+
+    lis.forEach((e) =>{
+        e.onclick = (ev) => {
+            console.log(ev.target.id)
+        }
+    })
+}
+
 //Função criadora de list-itens
 function liFactory(aobj, acor, id){
     //Declarando variáveis
@@ -51,11 +66,12 @@ function liFactory(aobj, acor, id){
 
 //Array de componentes usados na aplicação
 let componentes = [
-    btt1 = document.querySelector('#bttN1'),
-    btt2 = document.querySelector('#bttN2'),
-    btt3 = document.querySelector('#bttN3'),
+    btt1 = document.querySelector('.bttN1'),
+    btt2 = document.querySelector('.bttN2'),
+    btt3 = document.querySelector('.bttN3'),
     inputTarefa = document.querySelector('#nomeTarefa'),
-    ocult = document.querySelector('#ocult')
+    ocult = document.querySelector('#ocult'),
+    caixaBotoes1 = document.querySelector('.btts'),
 ]
 
 //Classe dos objetos que serão as tarefas
@@ -68,7 +84,7 @@ class Tarefa{
 
 //Função que vai adicionar tarefa
 function adicionar(pri, cor){
-    let nomeTarefa = document.querySelector('#nomeTarefa')
+    let nomeTarefa = document.querySelector('.nomeTarefa')
 
     if(nomeTarefa != '' || nomeTarefa != null){
         let novaTarefa = new Tarefa(nomeTarefa.value, pri)
@@ -76,7 +92,7 @@ function adicionar(pri, cor){
 
         bd.construirTarefa(novaTarefa, cor)
 
-        document.querySelector('#nomeTarefa').value = ''
+        document.querySelector('.nomeTarefa').value = ''
     }
 }
 
@@ -187,6 +203,7 @@ function mostrar(){
     componentes[2].style.display = 'inline-block'
     componentes[3].style.display = 'inline-block'
     componentes[4].style.display = 'inline-block'
+    componentes[5].style.display = 'flex'
 
     AnimacaoAbrir()
 }
@@ -205,11 +222,12 @@ function ocultar(){
 
 //Execuções após o fim da animação
 function AnimacaoFechar(){
-    let caixa = document.querySelector('#caixaCampo')
+    let caixa = document.querySelector('.caixaCampo')
     caixa.style.animation = 'normal trans-caixa 1s linear'
 
     caixa.addEventListener('animationend', ()=>{
         caixa.style.width = '5%'
+        caixa.style.maxWidth = '70px !important'
         caixa.style.height = '30px'
         caixa.style.transition = ''
 
@@ -223,7 +241,7 @@ function AnimacaoFechar(){
 
 //Execuções ao abrir a animação
 function AnimacaoAbrir(){
-    let caixa = document.querySelector('#caixaCampo')
+    let caixa = document.querySelector('.caixaCampo')
     caixa.style.animation = 'normal trans-caixa-abrir 0.3s linear'
 
     componentes[0].style.display = 'none'
@@ -286,5 +304,11 @@ function requisitarTarefas(){
     })
 }
 
+//Função que faz o mesmo que o botão de ocultar, mas para o body
+function ocultarBody(){
+    if(componentes[4].style.display != 'none'){
+        ocultar()
+    }
+}
 
 
