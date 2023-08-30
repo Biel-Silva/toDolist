@@ -17,7 +17,7 @@
         <p>Faça seu planejamento diário conosco &#x1F609</p>
         <div class="caixaCampo" onresize="verificadorResponsivo()">
             <button onclick="mostrar()" id="mostrar">+</button> 
-            <input type="text" name="" id="nomeTarefa">
+            <input type="text" name="" class="nomeTarefa campoTarefa">
             <button onclick="ocultar()" id="ocult">x</button><br>
 
             <div class="btts" >
@@ -28,11 +28,11 @@
         </div>
 
         <div class="caixaCampoCelular">
-            <input type="text" width="300">
+            <input type="text" class="campoTarefa2">
             <div class="btts" >
-                <button onclick="adicionar(1, '#84e28087')" value="1" class="bttN1">Moderado</button> <br>
-                <button onclick="adicionar(2, '#fca97987')" value="2" class="bttN2">Urgente</button> <br>
-                <button onclick="adicionar(3, '#fd5b5b87')" value="3" class="bttN3">Muito urgente</button>
+                <button onclick="adicionar(1, '#84e28087', 2)" value="1" class="bttN1">Moderado</button> <br>
+                <button onclick="adicionar(2, '#fca97987', 2)" value="2" class="bttN2">Urgente</button> <br>
+                <button onclick="adicionar(3, '#fd5b5b87', 2)" value="3" class="bttN3">Muito urgente</button>
             </div>
         </div>
 

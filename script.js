@@ -69,7 +69,7 @@ let componentes = [
     btt1 = document.querySelector('.bttN1'),
     btt2 = document.querySelector('.bttN2'),
     btt3 = document.querySelector('.bttN3'),
-    inputTarefa = document.querySelector('#nomeTarefa'),
+    inputTarefa = document.querySelector('.campoTarefa'),
     ocult = document.querySelector('#ocult'),
     caixaBotoes1 = document.querySelector('.btts'),
 ]
@@ -83,16 +83,24 @@ class Tarefa{
 }
 
 //Função que vai adicionar tarefa
-function adicionar(pri, cor){
-    let nomeTarefa = document.querySelector('.nomeTarefa')
+function adicionar(pri, cor, key){
+    let nomeTarefa = document.querySelector('.campoTarefa')
+        
+    if(key == 2){
+        nomeTarefa = document.querySelector('.campoTarefa2')
+    }
+
+
+    console.log(nomeTarefa)
 
     if(nomeTarefa != '' || nomeTarefa != null){
         let novaTarefa = new Tarefa(nomeTarefa.value, pri)
+        console.log(novaTarefa)
         
 
-        bd.construirTarefa(novaTarefa, cor)
+        bd.construirTarefa(novaTarefa, cor, key)
 
-        document.querySelector('.nomeTarefa').value = ''
+        document.querySelector('.campoTarefa').value = ''
     }
 }
 
@@ -113,7 +121,7 @@ let bd = {
     },
 
     //Método que vai pôr o li em jogo
-    construirTarefa(obj, cor){
+    construirTarefa(obj, cor, key){
         let arrayTarefas = []
         let array = []
 
@@ -152,7 +160,12 @@ let bd = {
                 if(result.isConfirmed) {
                     //Se true
                     //Obtendo o valor do campo
-                    let nomeTarefa = document.querySelector('#nomeTarefa')
+                    let nomeTarefa = document.querySelector('.campoTarefa')
+
+                    if(key == 2){
+                        nomeTarefa = document.querySelector('.campoTarefa2')
+
+                    }
             
                     //Caso o campo seja diferente de vazio sete o item
                     if(nomeTarefa.value != ''){
@@ -176,7 +189,12 @@ let bd = {
         //Se array.length == 0 então não há arrays repetidos, logo podemos setar normalmente   
         } else {
             //Obtendo o valor do campo
-            let nomeTarefa = document.querySelector('#nomeTarefa')
+            let nomeTarefa = document.querySelector('.campoTarefa')
+
+            if(key == 2){
+                nomeTarefa = document.querySelector('.campoTarefa2')
+
+            }
 
             //Obtendo o id atual
             let ID = this.id()
